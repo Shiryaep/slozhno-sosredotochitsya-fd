@@ -113,3 +113,35 @@
   background-color: var(--accentColor);
 }
 
+.main {
+  margin-top: 40px;
+}
+
+.main__section {
+  padding: 0px 10px;
+}
+
+.main__section-header {
+color: var(--accentColor);
+line-height: 23.4px;
+font-size: 18px;
+margin-bottom: 20px;
+}
+
+.main__section-subheader {
+line-height: 23.4px;
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.main__section-text {
+  color: var(--textColor);
+line-height: 23.4px;
+font-size: 18px;
+}
+
+.main__section-subheader_light {
+font-weight: normal;
+line-height: 23.4px;
+font-size: 18px;
+}
