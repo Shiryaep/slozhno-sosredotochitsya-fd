@@ -125,23 +125,29 @@
 color: var(--accentColor);
 line-height: 23.4px;
 font-size: 18px;
-margin-bottom: 20px;
 }
 
 .main__section-subheader {
 line-height: 23.4px;
 font-size: 18px;
-margin-bottom: 10px;
+margin-top: 20px;
 }
 
 .main__section-text {
   color: var(--textColor);
 line-height: 23.4px;
 font-size: 18px;
+margin-top: 10px;
 }
 
 .main__section-subheader_light {
 font-weight: normal;
 line-height: 23.4px;
 font-size: 18px;
+margin-top: 20px;
+}
+
+.main .main__section:not(:first-child)
+{
+  margin-top: 50px;
 }
