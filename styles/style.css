@@ -1,6 +1,8 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  font-family: "IBM Plex mono", monospace;
+  font-size: 18px;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 
   background: var(--pageBackgroundPicturePath);
@@ -9,15 +11,13 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: "IBM Plex mono", monospace;
-  font-size: 18px;
 }
 
-.page::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -25,11 +25,11 @@
   border-right: 1px solid var(--accentColor);
 }
 
-.page::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0;
+  left: 0;
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -38,11 +38,11 @@
 }
 
 .header {
-  height: 100vh;
-  min-block-size: 668px;
-  margin: 2px 10px;
+  position: relative;
   display: grid;
-  grid-template-rows: 238px min-content min-content;
+  grid-template-rows: 1fr min-content 1fr;
+  margin: var(--headerFooterMargin);
+  min-block-size: 648px;
 }
 
 .header__theme-menu {
@@ -52,21 +52,21 @@
 }
 
 .header__theme-menu-list {
-  margin-top: 4px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* margin-top: 4px; */
 }
 
 .header__theme-menu-button {
-  text-transform: lowercase;
-  cursor: pointer;
-  background: transparent;
-  color: var(--accentColor);
-  border: none;
-  height: 26px;
   width: 70px;
+  height: 26px;
+  border: none;
+  color: var(--accentColor);
   line-height: 18px;
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -75,8 +75,8 @@
 
 .header__rec-label {
   position: absolute;
-  top: 10px;
-  right: 19px;
+  top: 0;
+  right: 9px;
   color: var(--accentColor);
   font-size: 18px;
   line-height: 25px;
@@ -96,17 +96,18 @@
 
 .header__header {
   grid-row: 2;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  /* margin-bottom: 55px; */
   color: var(--mainColor);
-  text-shadow: 4px 4px 0 var(--accentColor);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
-  margin-bottom: 55px;
+  text-shadow: 4px 4px 0 var(--accentColor);
 }
 
 .header__description {
   grid-row: 3;
   font-weight: bold;
   line-height: 23.4px;
+  align-self: center;
 }
 
 .title-decor {
@@ -114,7 +115,8 @@
 }
 
 .main {
-  margin-top: 40px;
+  /* Решает проблему "съеденного" отступа */
+  margin: calc(var(--mainMargin) + var(--headerFooterMargin)) 0;
 }
 
 .main__section {
@@ -122,32 +124,57 @@
 }
 
 .main__section-header {
-color: var(--accentColor);
-line-height: 23.4px;
-font-size: 18px;
+  color: var(--accentColor);
+  font-size: 18px;
+  line-height: 23.4px;
 }
 
 .main__section-subheader {
-line-height: 23.4px;
-font-size: 18px;
-margin-top: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 23.4px;
 }
 
 .main__section-text {
+  margin-top: 10px;
   color: var(--textColor);
-line-height: 23.4px;
-font-size: 18px;
-margin-top: 10px;
+  font-size: 18px;
+  line-height: 23.4px;
 }
 
 .main__section-subheader_light {
-font-weight: normal;
-line-height: 23.4px;
-font-size: 18px;
-margin-top: 20px;
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23.4px;
 }
 
-.main .main__section:not(:first-child)
-{
+.main .main__section:not(:first-child) {
   margin-top: 50px;
+}
+
+.main__section-image {
+  width: 100%;
+}
+
+.main__section-images {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer__header {
+  color: var(--mainColor);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 2px 2px 0 var(--accentColor);
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  min-block-size: 648px;
+  align-items: center;
+  justify-content: center;
+  margin: var(--headerFooterMargin);
 }
