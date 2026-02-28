@@ -6,10 +6,15 @@
 :root {
   --pageBackgroundPicturePath: url("../images/cover-image-dark.png");
   --pageBackgroundAltColor: #000028;
+
   --mainColor: #db00ff;
   --accentColor: #ff0070;
   --textColor: #f1b2ce;
 
   --headerFooterMargin: 10px;
   --mainMargin: 40px;
+
+  --baseDeviseSize: 668px;
+
+  --minBlockSize: calc(var(--baseDeviseSize) - 2 * var(--headerFooterMargin));
 }
