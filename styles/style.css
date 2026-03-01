@@ -66,6 +66,7 @@
   grid-template-rows: 1fr min-content 1fr;
   margin: var(--headerFooterMargin);
   min-block-size: var(--minBlockSize);
+  height: calc(100vh - 2 * var(--headerFooterMargin));
 }
 
 .header__theme-menu {
@@ -214,6 +215,7 @@
   align-items: center;
   margin: var(--headerFooterMargin);
   min-block-size: var(--minBlockSize);
+  height: calc(100vh - 2 * var(--headerFooterMargin));
 }
 
 .footer__header {
