@@ -20,5 +20,5 @@
   --mainMargin: 40px;
   --mainGridGap: 50px;
   --baseDeviseSize: 668px;
-  --minBlockSize: calc(var(--baseDeviseSize) - 2 * var(--headerFooterMargin));
+  --minBlockSize: var(--baseDeviseSize);
 }

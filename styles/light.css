@@ -27,15 +27,15 @@
   :root {
     /* Дублируем только те же переменные, что и выше */
     --pageBackgroundPicturePath: url("../images/cover-image-light.png");
-  --pageBackgroundAltColor: #fff1f7;
+    --pageBackgroundAltColor: #fff1f7;
 
-  --mainColor: #ffc2e6;
-  --accentColor: #ff8dcb;
-  --accentColorTransparent: #32312d66;
-  --accentSecondColor: var(--textColor);
-  --textColor: #353430;
-  --textSubheaderColor: var(--textColor);
-  --textHeaderColor: var(--textColor);
-  --recLabelDisplay: none;
+    --mainColor: #ffc2e6;
+    --accentColor: #ff8dcb;
+    --accentColorTransparent: #32312d66;
+    --accentSecondColor: var(--textColor);
+    --textColor: #353430;
+    --textSubheaderColor: var(--textColor);
+    --textHeaderColor: var(--textColor);
+    --recLabelDisplay: none;
   }
 }

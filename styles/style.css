@@ -16,8 +16,8 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
+  top: var(--headerFooterMargin);
+  right: var(--headerFooterMargin);
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -28,8 +28,8 @@
 .decorated-zone::before {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: var(--headerFooterMargin);
+  left: var(--headerFooterMargin);
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -38,10 +38,10 @@
 }
 
 .header__rec-label {
-  display: var(--recLabelDisplay);
   position: absolute;
-  top: 0;
-  right: 9px;
+  top: var(--headerFooterMargin);
+  right: calc(9px + var(--headerFooterMargin));
+  display: var(--recLabelDisplay);
   color: var(--accentColor);
   font-size: 18px;
   line-height: 25px;
@@ -64,9 +64,9 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  margin: var(--headerFooterMargin);
+  height: 100vh;
+  padding: var(--headerFooterMargin);
   min-block-size: var(--minBlockSize);
-  height: calc(100vh - 2 * var(--headerFooterMargin));
 }
 
 .header__theme-menu {
@@ -102,8 +102,8 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: none;
   border-bottom: 1px solid var(--accentSecondColor);
+  outline: none;
 }
 
 .header__header {
@@ -115,9 +115,9 @@
 }
 
 .header__description {
-  color: var(--textSubheaderColor);
   grid-row: 3;
   align-self: center;
+  color: var(--textSubheaderColor);
   font-weight: bold;
   line-height: 23.4px;
 }
@@ -129,8 +129,7 @@
 .main {
   display: grid;
   row-gap: var(--mainGridGap);
-  /* Решает проблему "съеденного" отступа */
-  margin: calc(var(--mainMargin) + var(--headerFooterMargin)) 0;
+  margin: var(--mainMargin) 0;
 }
 
 .main__section {
@@ -170,17 +169,17 @@
 }
 
 .article__header {
-  color: var(--textSubheaderColor);
   grid-column: 1;
   grid-row: 1;
+  color: var(--textSubheaderColor);
   font-size: 18px;
   line-height: 23.4px;
 }
 
 .article__header_light {
-  color: var(--textSubheaderColor);
   grid-column: 1;
   grid-row: 1;
+  color: var(--textSubheaderColor);
   font-weight: normal;
   font-size: 18px;
   line-height: 23.4px;
@@ -213,9 +212,9 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  margin: var(--headerFooterMargin);
+  height: 100vh;
+  padding: var(--headerFooterMargin);
   min-block-size: var(--minBlockSize);
-  height: calc(100vh - 2 * var(--headerFooterMargin));
 }
 
 .footer__header {
@@ -330,8 +329,8 @@
   }
 
   .article-specific {
-    grid-row: 2;
     grid-column: auto;
+    grid-row: 2;
   }
 
   .main__section-images {
